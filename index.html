@@ -21,8 +21,14 @@
             <img id="profile-picture" class="h-24 w-24 rounded-full mx-auto mb-4" src="" alt="Profile Picture">
             <h1 id="profile-name" class="text-3xl font-bold text-center text-gray-800 mb-2"></h1>
             <p id="profile-bio" class="text-lg text-center text-gray-600 mb-4"></p>
-            <div id="repositories" class="max-w-4xl mx-auto grid grid-cols-2 gap-8">
-                <!-- Repository items will be inserted here dynamically -->
+            <div class="max-w-4xl mx-auto grid grid-cols-2 gap-8" id="gridContainer">
+                <!-- Grid Items will be inserted here dynamically -->
+            </div>
+        
+            <!-- Pagination Controls -->
+            <div class="mt-8 flex justify-center" id="paginationContainer">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" id="prevBtn" disabled>Previous</button>
+                <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" id="nextBtn">Next</button>
             </div>
         </div>
     </div>
