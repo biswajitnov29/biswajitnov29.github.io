@@ -28,13 +28,35 @@ fetch(apiUrl)
                                 ${repo.name}
                             </a>
                             <p class="text-sm text-gray-600 mt-1">${repo.description || 'No description'}</p>
+                            <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Card Image -->
+        <img src="https://via.placeholder.com/400x200" alt="Card Image" class="w-full h-48 object-cover">
+
+        <!-- Card Content -->
+        <div class="p-4">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Card Title</h2>
+            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Read More</a>
+        </div>
+    </div>
                         `;
                     } else {
                         repoItem.innerHTML = `
-                            <a href="#" class="text-blue-600 font-medium hover:underline">
+                            <a href="#" class="text-black-600 font-medium">
                                 ${repo.name}
                             </a>
                             <p class="text-sm text-gray-600 mt-1">${repo.description || 'No description'}</p>
+                            <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Card Image -->
+        <img src="https://via.placeholder.com/400x200" alt="Card Image" class="w-full h-48 object-cover">
+
+        <!-- Card Content -->
+        <div class="p-4">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Card Title</h2>
+            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Read More</a>
+        </div>
+    </div>
                         `;
                     }
                     repositoriesContainer.appendChild(repoItem);
