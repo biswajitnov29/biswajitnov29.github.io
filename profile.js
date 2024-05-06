@@ -8,8 +8,6 @@ fetch(apiUrl)
         const name = data.name;
         const bio = data.bio;
         const repositories = data.public_repos;
-        console.log(data);
-        debugger;
 
         // Update HTML elements with fetched data
         document.getElementById('profile-picture').src = profilePicture;
@@ -19,6 +17,7 @@ fetch(apiUrl)
         // Fetch user repositories
         fetch(`${apiUrl}/repos`)
             .then(response => response.json())
+            .then(response => !response.private)
             .then(repos => {
                 const repositoriesContainer = document.getElementById('repositories');
                 repos.slice(0, 5).forEach(repo => {
