@@ -45,7 +45,7 @@ function renderGridItems() {
             <div class="p-4">
                 <h2 class="text-xl font-semibold text-gray-800 mb-2">
                 ${item.name}
-                <div class="inline-block bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg">
+                <div class="text-xs inline-block bg-blue-500 text-white px-1 py-1 rounded-full shadow-lg">
                     ${item.private ? 'Private' : 'Public'}
                 </div>
                 </h2>
