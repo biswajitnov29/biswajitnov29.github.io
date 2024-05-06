@@ -17,7 +17,6 @@ fetch(apiUrl)
         // Fetch user repositories
         fetch(`${apiUrl}/repos`)
             .then(response => response.json())
-            .then(response => !response.private)
             .then(repos => {
                 const repositoriesContainer = document.getElementById('repositories');
                 repos.slice(0, 10).forEach(repo => {
