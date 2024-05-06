@@ -37,7 +37,6 @@ function renderGridItems() {
     for (let i = startIndex; i < endIndex && i < itemsData.length; i++) {
         const item = itemsData[i];
 
-        if(repoWhiteList.includes(item.name)){
             // Create grid item element
             const gridItem = document.createElement('div');
             gridItem.className = 'bg-white rounded-lg shadow-lg overflow-hidden';
@@ -53,7 +52,7 @@ function renderGridItems() {
     
             // Append grid item to grid container
             gridContainer.appendChild(gridItem);
-        }
+        
     }
 
     // Update pagination buttons
@@ -80,6 +79,7 @@ fetch(apiUrl)
         // Fetch user repositories
         fetch(`${apiUrl}/repos`)
             .then(response => response.json())
+            .then(repos => repos.filter(repo => repoWhiteList.includes(repo.name)))
             .then(repos => {
                 debugger;
             })
