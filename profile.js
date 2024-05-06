@@ -6,6 +6,7 @@ let currentPage = 1; // Current page
 const gridContainer = document.getElementById('gridContainer');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
+let itemsData = [];
 
 // Event listener for previous button
 prevBtn.addEventListener('click', () => {
@@ -24,7 +25,7 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
-function renderGridItems(itemsData) {
+function renderGridItems() {
     // Clear previous items
     gridContainer.innerHTML = '';
 
@@ -76,7 +77,8 @@ fetch(apiUrl)
         fetch(`${apiUrl}/repos`)
             .then(response => response.json())
             .then(repos => {
-                renderGridItems(repos);
+                itemsData = repos;
+                renderGridItems();
             })
             .catch(error => console.error('Error fetching repositories:', error));
     })
