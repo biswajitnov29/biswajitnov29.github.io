@@ -1,51 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My GitHub Profile</title>
+    <!-- Include Tailwind CSS -->
+    <style>
+    /* Additional custom styles */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+</style>
+
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-
 <body class="bg-gray-100">
 
-    <div class="container mx-auto py-8 px-4">
-        <div class="max-w-xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-            <!-- Profile Header -->
-            <div class="p-4 bg-gray-800 text-white">
-                <div class="flex items-center">
-                    <img src="https://avatars.githubusercontent.com/yourusername" alt="Profile Picture"
-                        class="h-12 w-12 rounded-full mr-2">
-                    <h1 class="text-lg font-bold">Your Name</h1>
-                </div>
-                <p class="text-sm mt-1">Frontend Developer</p>
-                <p class="text-xs mt-1">Passionate about coding!</p>
-            </div>
-
-            <!-- Repositories Section -->
-            <div class="p-4">
-                <h2 class="text-lg font-bold mb-4">Popular Repositories</h2>
-                <div class="divide-y divide-gray-300">
-                    <!-- Replace the following with your repositories -->
-                    <div class="py-2">
-                        <a href="https://github.com/yourusername/repo1" class="text-blue-600 font-medium hover:underline">
-                            Repository 1
-                        </a>
-                        <p class="text-sm text-gray-600">Description of Repository 1.</p>
-                    </div>
-                    <div class="py-2">
-                        <a href="https://github.com/yourusername/repo2" class="text-blue-600 font-medium hover:underline">
-                            Repository 2
-                        </a>
-                        <p class="text-sm text-gray-600">Description of Repository 2.</p>
-                    </div>
-                    <!-- Add more repositories as needed -->
-                </div>
+    <div class="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+            <img id="profile-picture" class="h-24 w-24 rounded-full mx-auto mb-4" src="" alt="Profile Picture">
+            <h1 id="profile-name" class="text-3xl font-bold text-center text-gray-800 mb-2"></h1>
+            <p id="profile-bio" class="text-lg text-center text-gray-600 mb-4"></p>
+            <div id="repositories" class="divide-y divide-gray-300">
+                <!-- Repository items will be inserted here dynamically -->
             </div>
         </div>
     </div>
 
+    <!-- Include script to fetch and populate data -->
+    <script src="profile.js"></script>
 </body>
-
 </html>
