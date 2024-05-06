@@ -43,7 +43,12 @@ function renderGridItems() {
         gridItem.innerHTML = `
             <img src="https://via.placeholder.com/400x200" alt="Card Image" class="w-full h-48 object-cover">
             <div class="p-4">
-                <h2 class="text-xl font-semibold text-gray-800 mb-2">${item.name}</h2>
+                <h2 class="text-xl font-semibold text-gray-800 mb-2">
+                ${item.name}
+                <div class="inline-block bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg">
+                    ${item.private ? 'Private' : 'Public'}
+                </div>
+                </h2>
                 <p class="text-gray-600">${item.description || 'No description'}</p>
             </div>
         `;
