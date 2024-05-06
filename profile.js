@@ -20,15 +20,24 @@ fetch(apiUrl)
             .then(response => !response.private)
             .then(repos => {
                 const repositoriesContainer = document.getElementById('repositories');
-                repos.slice(0, 5).forEach(repo => {
+                repos.slice(0, 10).forEach(repo => {
                     const repoItem = document.createElement('div');
                     repoItem.classList.add('py-2');
-                    repoItem.innerHTML = `
-                        <a href="${repo.html_url}" class="text-blue-600 font-medium hover:underline">
-                            ${repo.name}
-                        </a>
-                        <p class="text-sm text-gray-600 mt-1">${repo.description || 'No description'}</p>
-                    `;
+                    if(!repo.private){
+                        repoItem.innerHTML = `
+                            <a href="${repo.html_url}" class="text-blue-600 font-medium hover:underline">
+                                ${repo.name}
+                            </a>
+                            <p class="text-sm text-gray-600 mt-1">${repo.description || 'No description'}</p>
+                        `;
+                    } else {
+                        repoItem.innerHTML = `
+                            <a href="#" class="text-blue-600 font-medium hover:underline">
+                                ${repo.name}
+                            </a>
+                            <p class="text-sm text-gray-600 mt-1">${repo.description || 'No description'}</p>
+                        `;
+                    }
                     repositoriesContainer.appendChild(repoItem);
                 });
             })
