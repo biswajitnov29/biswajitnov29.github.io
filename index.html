@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TailwindCSS Example</title>
-    <!-- Include Tailwind CSS via CDN -->
+    <title>My GitHub Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container mx-auto p-4">
-        <!-- Content goes here -->
-        <h1 class="text-3xl font-bold text-center mb-6">Welcome to TailwindCSS Example</h1>
-        <p class="text-lg text-gray-700 leading-relaxed">
-            This is a simple example of how to use TailwindCSS in an HTML file. 
-            TailwindCSS is a utility-first CSS framework that makes styling web 
-            applications fast and easy.
-        </p>
-        <div class="mt-8">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Click me!
-            </button>
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto py-8 px-4">
+        <div class="max-w-xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+            <!-- Profile Header -->
+            <div class="p-4 bg-gray-800 text-white">
+                <div class="flex items-center">
+                    <img src="https://avatars.githubusercontent.com/yourusername" alt="Profile Picture"
+                        class="h-12 w-12 rounded-full mr-2">
+                    <h1 class="text-lg font-bold">Your Name</h1>
+                </div>
+                <p class="text-sm mt-1">Frontend Developer</p>
+                <p class="text-xs mt-1">Passionate about coding!</p>
+            </div>
+
+            <!-- Repositories Section -->
+            <div class="p-4">
+                <h2 class="text-lg font-bold mb-4">Popular Repositories</h2>
+                <div class="divide-y divide-gray-300">
+                    <!-- Replace the following with your repositories -->
+                    <div class="py-2">
+                        <a href="https://github.com/yourusername/repo1" class="text-blue-600 font-medium hover:underline">
+                            Repository 1
+                        </a>
+                        <p class="text-sm text-gray-600">Description of Repository 1.</p>
+                    </div>
+                    <div class="py-2">
+                        <a href="https://github.com/yourusername/repo2" class="text-blue-600 font-medium hover:underline">
+                            Repository 2
+                        </a>
+                        <p class="text-sm text-gray-600">Description of Repository 2.</p>
+                    </div>
+                    <!-- Add more repositories as needed -->
+                </div>
+            </div>
         </div>
     </div>
+
 </body>
+
 </html>
