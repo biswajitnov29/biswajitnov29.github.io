@@ -8,6 +8,8 @@ fetch(apiUrl)
         const name = data.name;
         const bio = data.bio;
         const repositories = data.public_repos;
+        console.log(data);
+        debugger;
 
         // Update HTML elements with fetched data
         document.getElementById('profile-picture').src = profilePicture;
