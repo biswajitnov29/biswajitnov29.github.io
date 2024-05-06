@@ -37,7 +37,7 @@ function renderGridItems() {
     for (let i = startIndex; i < endIndex && i < itemsData.length; i++) {
         const item = itemsData[i];
 
-        if(repoWhiteList.includes(item)){
+        if(repoWhiteList.includes(item.name)){
             // Create grid item element
             const gridItem = document.createElement('div');
             gridItem.className = 'bg-white rounded-lg shadow-lg overflow-hidden';
@@ -80,6 +80,9 @@ fetch(apiUrl)
         // Fetch user repositories
         fetch(`${apiUrl}/repos`)
             .then(response => response.json())
+            .then(repos => {
+                debugger;
+            })
             .then(repos => {
                 itemsData = repos;
                 renderGridItems();
