@@ -1,5 +1,5 @@
 const apiUrl = 'https://api.github.com/users/biswajitnov29';
-
+const repoWhiteList = ['flight-fare','TO-DO-Manager','TaxCalculator', 'VendorsExchange']
 const itemsPerPage = 6; // Number of items per page
 let currentPage = 1; // Current page
 
@@ -37,24 +37,23 @@ function renderGridItems() {
     for (let i = startIndex; i < endIndex && i < itemsData.length; i++) {
         const item = itemsData[i];
 
-        // Create grid item element
-        const gridItem = document.createElement('div');
-        gridItem.className = 'bg-white rounded-lg shadow-lg overflow-hidden';
-        gridItem.innerHTML = `
-            <img src="https://via.placeholder.com/400x200" alt="Card Image" class="w-full h-48 object-cover">
-            <div class="p-4">
-                <h2 class="text-xl font-semibold text-gray-800 mb-2">
-                ${item.name}
-                <div class="text-xs inline-block bg-blue-500 text-white px-1 py-1 rounded-full shadow-lg">
-                    ${item.private ? 'Private' : 'Public'}
+        if(repoWhiteList.includes(item)){
+            // Create grid item element
+            const gridItem = document.createElement('div');
+            gridItem.className = 'bg-white rounded-lg shadow-lg overflow-hidden';
+            gridItem.innerHTML = `
+                <img src="https://via.placeholder.com/400x200" alt="Card Image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">
+                    ${item.name}
+                    </h2>
+                    <p class="text-gray-600">${item.description || 'No description'}</p>
                 </div>
-                </h2>
-                <p class="text-gray-600">${item.description || 'No description'}</p>
-            </div>
-        `;
-
-        // Append grid item to grid container
-        gridContainer.appendChild(gridItem);
+            `;
+    
+            // Append grid item to grid container
+            gridContainer.appendChild(gridItem);
+        }
     }
 
     // Update pagination buttons
