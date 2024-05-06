@@ -1,6 +1,6 @@
 const apiUrl = 'https://api.github.com/users/biswajitnov29';
 
-const itemsPerPage = 2; // Number of items per page
+const itemsPerPage = 6; // Number of items per page
 let currentPage = 1; // Current page
 
 const gridContainer = document.getElementById('gridContainer');
