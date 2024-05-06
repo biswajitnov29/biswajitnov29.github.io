@@ -1,4 +1,4 @@
-const apiUrl = 'https://api.github.com/users/yourusername';
+const apiUrl = 'https://api.github.com/users/biswajitnov29';
 
 // Fetch GitHub profile data
 fetch(apiUrl)
