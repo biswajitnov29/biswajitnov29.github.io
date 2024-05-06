@@ -81,9 +81,6 @@ fetch(apiUrl)
             .then(response => response.json())
             .then(repos => repos.filter(repo => repoWhiteList.includes(repo.name)))
             .then(repos => {
-                debugger;
-            })
-            .then(repos => {
                 itemsData = repos;
                 renderGridItems();
             })
